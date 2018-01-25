@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title></title>
+</head>
+<script>
+    (function (doc, win) {
+        // 分辨率Resolution适配
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if (clientWidth >= 750) {
+                        docEl.style.fontSize = 100 + 'px';
+                    }else{docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';}
+                }
+        // Abort if browser does not support addEventListener
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        recalc();
+    })(document, window);
+</script>
+<style>
+    .p_1{
+        font-size: 0.32rem;
+
+    }
+    .w_1{
+        font-weight: 600;
+        font-size: 0.32rem;
+    }
+    .p_2{
+        font-size: 0.40rem;
+    }
+    table{
+        font-size: 0.32rem;
+        border-collapse:collapse;
+    }
+    table, td, th
+    {
+        border:1px solid black;
+    }
+
+
+</style>
+<body>
+<div style="padding: 0.1rem 0.2rem">
+    <p style="text-align: center;font-size:0.64rem">kb260的博客</p>
+    <p class="p_1"></p>
+  
+    
+    
+</div>
+</body>
+</html>
